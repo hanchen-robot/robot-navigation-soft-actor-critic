@@ -359,14 +359,14 @@ classdef Agent
 end
 %% Actor Network Weight Initialization Function 演员网络权重初始化函数
 function weights = KhoiTaoActor(state_size, fc_size, action_size)
-    weights{1} = (1/sqrt(fc_size))*randn(fc_size, state_size); % fc_1_Weights
-    weights{2} = zeros(fc_size, 1); % fc_1_Bias
-    weights{3} = (1/sqrt(fc_size))*randn(fc_size, fc_size); % fc_body_Weights
-    weights{4} = zeros(fc_size, 1); % fc_body_Bias
-    weights{5} = (1/sqrt(fc_size))*randn(action_size, fc_size); % fc_mean_Weights
-    weights{6} = zeros(action_size, 1); % fc_mean_Bias
-    weights{7} = (1/sqrt(fc_size))*randn(action_size, fc_size); % fc_std_Weights
-    weights{8} = zeros(action_size, 1); % fc_std_Bias
+    weights{1} = (1/sqrt(fc_size))*randn(fc_size, state_size); % fc_1_weights
+    weights{2} = zeros(fc_size, 1); % fc_1_bias
+    weights{3} = (1/sqrt(fc_size))*randn(fc_size, fc_size); % fc_body_weights
+    weights{4} = zeros(fc_size, 1); % fc_body_bias
+    weights{5} = (1/sqrt(fc_size))*randn(action_size, fc_size); % fc_mean_weights
+    weights{6} = zeros(action_size, 1); % fc_mean_bias
+    weights{7} = (1/sqrt(fc_size))*randn(action_size, fc_size); % fc_std_weights
+    weights{8} = zeros(action_size, 1); % fc_std_bias
     for i = 1:8
         weights{i + 8} = zeros(size(weights{i})); % m_t
         weights{i + 16} = zeros(size(weights{i})); % v_t
@@ -374,14 +374,14 @@ function weights = KhoiTaoActor(state_size, fc_size, action_size)
 end
 %% Constructor function of the critic network 评论家网络的重载构造函数
 function weights = KhoiTaoCritic(state_size, fc_size, action_size)
-    weights{1} = (1/sqrt(fc_size))*randn(fc_size, state_size); % fc_1_Weights
-    weights{2} = zeros(fc_size, 1); % fc_1_Bias
-    weights{3} = (1/sqrt(fc_size))*randn(fc_size, action_size); % fc_2_Weights
-    weights{4} = zeros(fc_size, 1); % fc_2_Bias
-    weights{5} = (1/sqrt(fc_size))*randn(fc_size, 2*fc_size); % fc_body_Weights
-    weights{6} = zeros(fc_size, 1); % fc_body_Bias
-    weights{7} = (1/sqrt(fc_size))*randn(1, fc_size); % critic_Weights
-    weights{8} = zeros(1, 1); % critic_Bias
+    weights{1} = (1/sqrt(fc_size))*randn(fc_size, state_size); % fc_1_weights
+    weights{2} = zeros(fc_size, 1); % fc_1_bias
+    weights{3} = (1/sqrt(fc_size))*randn(fc_size, action_size); % fc_2_weights
+    weights{4} = zeros(fc_size, 1); % fc_2_bias
+    weights{5} = (1/sqrt(fc_size))*randn(fc_size, 2*fc_size); % fc_body_weights
+    weights{6} = zeros(fc_size, 1); % fc_body_bias
+    weights{7} = (1/sqrt(fc_size))*randn(1, fc_size); % critic_weights
+    weights{8} = zeros(1, 1); % critic_bias
     weights{9} = [diag(ones(fc_size, 1)); zeros(fc_size, fc_size)]; % concat1
     weights{10} = [zeros(fc_size, fc_size); diag(ones(fc_size, 1))]; % concat2
     for i = 1:8

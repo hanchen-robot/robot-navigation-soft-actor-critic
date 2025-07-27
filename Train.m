@@ -10,15 +10,15 @@ batch_size = 256;       % Batch size 批次尺寸
 %% Build Environment 创建地图环境
 env = Environment([0; 20], ...      % X-axis limit of the map 地图的x轴极限
                   [0; 20], ...      % Y-axis limit of the map 地图的x轴极限
-                  [19; 19; 1], ...  % Goal (position and radius) 目标终点(中心和半径) [19; 19; 0.5]
+                  [19; 19; 1], ...  % Goal (position and radius) 目标终点(中心和半径)
                   1, ...            % Is there any obstacle (1 Yes, 0 No) 是否有障碍物(1是，0否)
                   [6, 12, 2, 4; ...
                    6, 4, 2, 4; ...
                    12, 12, 2, 4; ...
                    12, 4, 2, 4; ...
                    ], ...           % Obstacle 障碍物位置和长宽
-                  60, ...           % Number of lidar beam 激光雷达光束数量31
-                  8);               % Detection range of lidar 激光雷达的检测范围5
+                  60, ...           % Number of lidar beam 激光雷达光束数量
+                  8);               % Detection range of lidar 激光雷达的检测范围
 %% Build Agent 创建代理
 agent = Agent(3 + 2 + env.Num_rays, ...  % State 状态
               2, ...                     % Action 动作

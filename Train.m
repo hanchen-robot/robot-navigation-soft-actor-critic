@@ -86,7 +86,7 @@ for i = 1:max_episode
     rewardSave(i) = score;
     save('trained_data.mat', 'env', 'agent', 'buffer', 'buffer_count', 'rewardSave');
     %% Output result 显示结果
-    fprintf('Episode: %-6d Step: %-5d Total Step: %-7d Total Score: %-8.2f Entropy: %-8.2f Alpha: %-8.4f Q1: %-8.2f Q2: %-8.2f T1: %-8.2f T2: %-8.2f\n', ...
+    fprintf('Episode: %-6d Step: %-5d Total Step: %-7d Score: %-8.2f Entropy: %-8.2f Alpha: %-8.4f Q1: %-8.2f Q2: %-8.2f T1: %-8.2f T2: %-8.2f\n', ...
              i, j, buffer_count - 1, score, entropy, agent.Alpha, Q1, Q2, T1, T2);
-    %回合数 步数 总步数 总得分 熵 代理 Q1 Q2 T1 T2
+    %回合数 步数 总步数 得分 熵 代理 Q1 Q2 T1 T2
 end

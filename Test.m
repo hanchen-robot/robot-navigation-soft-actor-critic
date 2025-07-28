@@ -66,9 +66,9 @@ for i = 1:max_episode
     %% Computation speed 计算速度
     speed(:, i) = path/(j*0.1);
     %% Output result 显示结果
-    fprintf('Episode: %-6d Step: %-5d Total Score: %-8.2f Entropy: %-8.2f Alpha: %-8.4f Q1: %-8.2f Q2: %-8.2f T1: %-8.2f T2: %-8.2f Speed: %.2f (m/s)\n', ...
+    fprintf('Episode: %-6d Step: %-5d Score: %-8.2f Entropy: %-8.2f Alpha: %-8.4f Q1: %-8.2f Q2: %-8.2f T1: %-8.2f T2: %-8.2f Speed: %.2f (m/s)\n', ...
              i, j, score, entropy, agent.Alpha, Q1, Q2, T1, T2, speed(i));
-    %回合数 步数 总得分 熵 代理 Q1 Q2 T1 T2 速度
+    %回合数 步数 得分 熵 代理 Q1 Q2 T1 T2 速度
 end
 % %% Close VideoWriter 关闭VideoWriter
 % close(v);
